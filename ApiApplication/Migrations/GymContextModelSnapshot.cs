@@ -27,6 +27,8 @@ namespace ApiApplication.Migrations
 
                     b.Property<string>("LastName");
 
+                    b.Property<string>("OAuthId");
+
                     b.Property<string>("Username");
 
                     b.HasKey("UserId");

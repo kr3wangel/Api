@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiApplication.Migrations
 {
     [DbContext(typeof(GymContext))]
-    [Migration("20180830235449_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20180911023750_HealthApp")]
+    partial class HealthApp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,13 @@ namespace ApiApplication.Migrations
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("FirstName");
+
                     b.Property<DateTime>("InsertedDate");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("OAuthId");
 
                     b.Property<string>("Username");
 

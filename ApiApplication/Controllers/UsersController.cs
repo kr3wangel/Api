@@ -100,6 +100,11 @@ namespace ApiApplication.Controllers
                 return this.BadRequest(this.ModelState);
             }
 
+			if (this.OAuthIdentityExists(user.OAuthId))
+			{
+				return this.Ok(this.context.Users.Where(u => u.OAuthId == user.OAuthId));
+			}
+
 	        user.InsertedDate = DateTime.UtcNow;
             this.context.Users.Add(user);
             await this.context.SaveChangesAsync();
@@ -132,5 +137,10 @@ namespace ApiApplication.Controllers
         {
             return this.context.Users.Any(e => e.UserId == id);
         }
+
+	    private bool OAuthIdentityExists(string oAuthId)
+	    {
+		    return this.context.Users.Any(u => u.OAuthId == oAuthId);
+	    }
     }
 }

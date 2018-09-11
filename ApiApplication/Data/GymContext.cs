@@ -15,7 +15,7 @@
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlite("Data Source=gym.db");
+			optionsBuilder.UseSqlite("Data Source=health.db");
 		}
 	}
 }

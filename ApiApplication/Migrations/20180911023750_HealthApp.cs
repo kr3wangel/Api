@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ApiApplication.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class HealthApp : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,10 @@ namespace ApiApplication.Migrations
                 {
                     UserId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    OAuthId = table.Column<string>(nullable: true),
                     Username = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
                     InsertedDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
